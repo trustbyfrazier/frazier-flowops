@@ -1,0 +1,10 @@
+Purpose: Sends daily language learning vocabulary via SMS.
+
+What it does:
+- Runs daily at 8:00 AM via cron trigger
+- Fetches top 3 articles from Hacker News
+- Extracts unique words from article titles
+- Translates English words to German using LingvaNex
+- Saves vocabulary to Airtable for record-keeping
+- Sends SMS with 5 daily words (English:German) via Vonage
+- Creates a personalized language learning routine

@@ -1,0 +1,18 @@
+Purpose: Monitors Twitter for brand mentions and alerts teams in Slack.
+
+What it does:
+- Schedule: Runs every 10 minutes via cron trigger
+- Monitoring: Searches for mentions of "@n8n_io" (configurable)
+- Smart Filtering: Only processes tweets created since the last run (10-minute window)
+- Data Processing: Extracts tweet content and constructs tweet URLs
+- Notifications: Posts new mentions to a Slack channel (#recent-tweets) with:
+- Tweet text
+Direct link to the tweet
+
+Key Features:
+- Duplicate prevention using time-based filtering
+- Configurable search terms and Slack channels
+- Regular monitoring without missing mentions
+
+Use Case:
+Ideal for social media teams, customer support, or brand managers who need real-time alerts when their company is mentioned on Twitter.

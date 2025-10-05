@@ -1,0 +1,45 @@
+Purpose: Automates the entire order processing pipeline from Shopify orders to CRM, project management, and customer communication.
+
+What it does:
+Trigger:
+- Listens for new Shopify orders via webhook trigger
+- Automatically processes orders as they're created
+
+Data Processing:
+- Extracts and structures customer data from Shopify order:
+- Customer name, email, phone
+- Shipping address (street, city, zip, country, province)
+- Order value and details
+- CRM & Business Operations:
+
+Zoho CRM Integration:
+- Creates/updates contact records with full customer details
+- Stores mailing address information
+
+Accounting & Invoicing:
+- Creates invoices in Harvest with order details
+- Sets payment terms, currency, and issue dates
+
+Project Management:
+- Creates Trello cards for each order
+- Includes order number and status URL for tracking
+- Customer Communication & Marketing:
+
+Conditional Email Campaigns:
+- Orders over $50: Sends coupon code (15% off) via Gmail
+- All orders: Sends thank you email with order confirmation
+
+Marketing Automation:
+- Tags high-value customers in Mailchimp with "high-order" tag
+- Enables targeted marketing campaigns
+
+Key Features:
+- Conditional logic based on order value
+- Multi-channel automation (CRM, accounting, project management, email)
+- Customer segmentation for marketing
+- Complete order processing pipeline
+
+Use Case:
+This is a comprehensive e-commerce automation system that handles everything from order receipt to customer follow-up. It's perfect for Shopify store owners who want to automate their back-office operations, maintain organized customer records, and provide personalized customer experiences based on order value.
+
+The workflow ensures no order falls through the cracks while building customer relationships and marketing lists automatically.

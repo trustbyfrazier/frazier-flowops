@@ -1,0 +1,12 @@
+Purpose: Automatically promotes new Shopify products on Twitter and Telegram.
+
+What it does:
+- Triggers on new product creation
+- Multi-platform promotion:
+Twitter: Public product announcements
+Telegram: Channel/group notifications
+- Dynamic content including vendor, product title, and product type
+
+Use Case: 
+Automated social media marketing for new products.
+

@@ -1,0 +1,37 @@
+Purpose: Automatically creates engaging, coherent Twitter threads using AI based on user prompts.
+
+What it does:
+Trigger & Input:
+- Activated by chat messages via webhook
+- Users provide topics or ideas for Twitter threads
+
+AI-Powered Content Creation:
+- Uses OpenAI GPT-4 to generate tweet content
+- Memory system maintains context throughout thread creation
+- AI Agent ("Agente X") orchestrates the entire thread generation process
+
+Thread Structure:
+- First Tweet: Creates an engaging opening tweet using the first tweet tool
+- Thread Continuation: Builds coherent replies using the hilo (thread) tool
+- Character Limits: Enforces 270-character maximum per tweet
+- Reply Chains: Each tweet properly replies to the previous one
+
+Content Style:
+- Informative yet friendly writing style
+- First-person, conversational tone
+- Natural and engaging narrative flow
+- Coherent storytelling across multiple tweets
+
+Key Features:
+- Automated thread creation from simple prompts
+- Consistent voice and style throughout the thread
+- Proper Twitter threading with reply mechanics
+- Character limit compliance
+- Context-aware content generation
+
+Use Case:
+Perfect for content creators, marketers, and social media managers who want to:
+- Quickly generate engaging Twitter threads on any topic
+- Maintain consistent posting schedules
+- Create professional-quality content without manual writing
+- Scale their social media content production

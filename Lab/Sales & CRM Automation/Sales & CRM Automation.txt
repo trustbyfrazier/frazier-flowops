@@ -1,0 +1,13 @@
+Purpose: Syncs Shopify orders to HubSpot CRM as deals and contacts.
+
+What it does:
+- Triggers on order updates
+- Creates/updates HubSpot contacts with customer data
+- Creates deals for orders that don't exist in HubSpot
+- Maps order data to CRM fields:
+Deal amount, name, close date
+Customer contact information
+Prevents duplicate deals
+
+Use Case: 
+Sales pipeline automation and CRM integration.

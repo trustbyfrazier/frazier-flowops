@@ -1,0 +1,11 @@
+Purpose: Automatically creates Zendesk support tickets for new Shopify orders while preventing duplicates.
+
+What it does:
+- Triggers on order updates in Shopify
+- Checks for existing tickets in Zendesk using order number as external ID
+- Prevents duplicate tickets by verifying if ticket already exists
+- Creates new tickets only for orders without existing Zendesk tickets
+- Ticket content includes order details, customer info, and item count
+
+Use Case: 
+Automated customer support ticket creation for new orders.

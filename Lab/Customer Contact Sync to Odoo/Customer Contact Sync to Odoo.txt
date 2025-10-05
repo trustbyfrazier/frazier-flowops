@@ -1,0 +1,13 @@
+Purpose: Syncs Shopify customers to Odoo contact management.
+
+What it does:
+- Triggers on new customer creation in Shopify
+- Checks for existing contacts in Odoo by email
+- Creates comprehensive contact records with:
+Full name and contact details
+Address information (street, city, zip)
+Phone numbers
+- Duplicate prevention system
+
+Use Case: 
+Centralized customer management across e-commerce and ERP.

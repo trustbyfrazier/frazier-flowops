@@ -1,0 +1,8 @@
+Purpose: Automates lead outreach campaigns by syncing data between Airtable and Lemlist.
+
+What it does:
+- Reads contact data from Airtable (names and emails)
+- Adds leads to a specific Lemlist email campaign
+- Verifies lead status by fetching data back from Lemlist
+- Creates an automated email outreach pipeline
+- Syncs CRM data with email marketing platform

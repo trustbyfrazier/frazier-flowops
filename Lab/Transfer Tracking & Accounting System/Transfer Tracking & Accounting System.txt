@@ -1,0 +1,28 @@
+Purpose: Monitors Wise transfers and automatically logs them to Airtable for record-keeping and accounting.
+
+What it does:
+Trigger & Monitoring:
+- Listens for transfer state changes via Wise webhook
+- Monitors a specific Wise profile 
+- Automatically triggers when transfers are created, updated, or completed
+
+Data Processing:
+- Fetches detailed transfer information using the transfer ID
+
+Extracts key data points:
+- Transfer ID
+- Creation date
+- Reference/description
+- Amount transferred
+
+Record Keeping:
+- Stores all transfer data in Airtable 
+- Creates an audit trail of all money movements
+- Maintains organized financial records
+
+Use Case:
+This is perfect for:
+- Accounting and bookkeeping automation
+- Financial reporting and audit trails
+- Expense tracking across multiple transfers
+- Business finance management

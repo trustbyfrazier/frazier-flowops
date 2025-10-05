@@ -1,0 +1,11 @@
+Purpose: Syncs new Shopify customers to Mautic marketing automation platform.
+
+What it does:
+- Triggers on new customer creation in Shopify
+- Automatically creates contacts in Mautic with:
+Email address
+First and last name
+- Extensible for additional customer fields
+
+Use Case: 
+Marketing automation and customer relationship management.

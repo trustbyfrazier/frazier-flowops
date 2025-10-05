@@ -1,0 +1,29 @@
+Purpose: Automates a complete money transfer process using Wise (formerly TransferWise) in a sequential workflow.
+
+What it does:
+Step-by-step Transfer Process:
+Creates a Quote:
+- Fixed amount: 500 EUR
+- Same currency transfer (EUR to EUR)
+- Uses specific profile  and target account 
+
+Creates Transfer:
+- Uses the quote ID from step 1
+- Adds reference message: "Thank you for the contribution"
+- Sets up the transfer with all details
+
+Executes Transfer:
+- Actually sends the money using the transfer ID
+- Moves funds from source to destination
+
+Verifies Transfer:
+- Fetches transfer details to confirm execution
+- Provides status and confirmation
+
+Use Case:
+- This is ideal for recurring payments like:
+- Regular donations or contributions
+- Monthly vendor payments
+- Subscription-based transfers
+- Automated salary payments
+

@@ -1,0 +1,29 @@
+Purpose: Monitors a YouTube channel for new videos and automatically sends notifications to Telegram.
+
+What it does:
+Trigger & Monitoring:
+- Runs every 30 minutes (interval trigger)
+- Checks a specific YouTube channel 
+- Fetches the 4 most recent videos sorted by upload date
+
+Data Processing:
+- Extracts video ID, title, and constructs YouTube URL
+- Uses workflow static data to track previously sent videos
+- Prevents duplicate notifications by checking if videos were already sent
+- Only processes new videos that haven't been notified before
+
+Notification:
+- Sends formatted HTML messages to a Telegram channel 
+
+Message format includes:
+- Video title in bold
+- Direct YouTube link
+
+Key Features:
+- Smart duplicate prevention using persistent storage
+- Regular monitoring (every 30 minutes)
+- Formatted Telegram notifications with clickable links
+- Channel-specific tracking for one YouTube channel
+
+Use Case:
+This is perfect for content creators or communities who want to automatically notify their Telegram audience whenever new YouTube content is published, ensuring timely engagement without manual posting.

@@ -1,0 +1,11 @@
+Purpose: Synchronizes Shopify customer updates to Zendesk user profiles.
+
+What it does:
+- Triggers on customer updates in Shopify
+- Searches for existing Zendesk users by email
+- Updates contact information (especially phone numbers)
+- Creates new Zendesk users for new customers
+- Smart modification detection to avoid unnecessary updates
+
+Use Case: 
+Customer support profile synchronization.

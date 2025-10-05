@@ -1,0 +1,9 @@
+Purpose: Automates delivery task creation for Shopify order fulfillments.
+
+What it does:
+- Triggers on new fulfillment creation in Shopify
+- Creates delivery tasks in Onfleet (delivery management platform)
+- Streamlines logistics process
+
+Use Case: 
+Automated delivery and logistics management.

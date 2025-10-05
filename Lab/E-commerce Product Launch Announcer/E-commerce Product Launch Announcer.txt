@@ -1,0 +1,14 @@
+Purpose: Automatically announces new WooCommerce products on both Twitter and Telegram.
+
+What it does:
+- Trigger: Listens for new product creation in WooCommerce
+- Multi-platform Publishing: Simultaneously posts to:
+- Twitter (public announcement)
+- Telegram (channel/group announcement)
+- Content: Product announcement format:
+"✨ New Product Announcement ✨"
+Product name
+Direct link to product page
+
+Use Case:
+Perfect for e-commerce stores using WooCommerce that want to automatically promote new products across multiple social platforms, reaching both Twitter followers and Telegram community members simultaneously.

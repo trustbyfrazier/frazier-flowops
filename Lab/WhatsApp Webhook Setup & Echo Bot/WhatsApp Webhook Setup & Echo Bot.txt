@@ -1,0 +1,20 @@
+Purpose: Provides the foundational setup for WhatsApp Business API integration with a basic message echo functionality.
+
+What it does:
+- Webhook Configuration:
+- Verification Endpoint: Handles Meta's webhook verification challenge
+- Message Reception: Listens for incoming WhatsApp messages via POST webhooks
+- Proper webhook setup following Meta's requirements
+
+Core Functionality:
+- Echo bot that repeats user messages back to them
+- Message filtering to distinguish between user messages and status updates
+- Template message handling for out-of-session communication
+
+Key Features:
+- Dual webhook setup (GET for verification, POST for messages)
+- Structured message parsing from WhatsApp webhook format
+- Basic response mechanism
+
+Use Case:
+This is a starter template for developers building WhatsApp integrations. It handles the complex webhook setup and provides a basic echo functionality that can be extended into more sophisticated chatbots.

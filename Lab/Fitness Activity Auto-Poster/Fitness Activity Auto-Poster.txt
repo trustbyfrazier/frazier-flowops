@@ -1,0 +1,11 @@
+Purpose: Automatically shares new Strava workout activities on Twitter.
+
+What it does:
+- Trigger: Listens for new activity creation in Strava via webhook
+- Content: Automatically tweets workout details including:
+- Distance run (in meters)
+- Activity name/title
+Format: "I ran [distance] meters and completed my [activity name]!"
+
+Use Case:
+Perfect for fitness enthusiasts who want to automatically share their workout achievements on social media without manual posting.

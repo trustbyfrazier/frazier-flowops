@@ -1,0 +1,24 @@
+Purpose: Creates an intelligent WhatsApp customer support agent that can answer questions by crawling and analyzing your website content in real-time.
+
+What it does:
+AI Agent Capabilities:
+- Uses OpenAI GPT-4 to understand customer queries
+- Automatically crawls your website to find answers using two tools:
+- list_links(): Discovers internal website links
+- get_page(): Extracts readable text from web pages
+- Maintains conversation memory using PostgreSQL to remember chat history
+
+Smart Response System:
+- Answers in natural, friendly language as your company representative
+- Provides accurate, fact-based responses by quoting actual website content
+- Cleans formatting to ensure WhatsApp-compatible messages
+- 24-hour window management for WhatsApp Business API compliance
+
+Business Features:
+- Real-time website crawling (no manual training required)
+- Multi-language support (configured for Spanish/English)
+- Professional customer service persona
+- Fallback to human agents when information isn't found
+
+Use Case:
+Perfect for businesses wanting 24/7 automated customer support on WhatsApp that can answer questions about products, pricing, shipping, policies, etc., by reading your actual website content.

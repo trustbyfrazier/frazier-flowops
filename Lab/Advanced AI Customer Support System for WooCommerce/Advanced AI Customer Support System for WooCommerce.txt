@@ -1,0 +1,53 @@
+Purpose: Creates a comprehensive, secure AI-powered customer support system that handles post-sales inquiries for WooCommerce stores with multiple layers of functionality.
+
+What it does:
+Core AI Agent System:
+- "Post-Sales Agent": Main AI agent specialized in WooCommerce customer support
+- Uses OpenAI GPT-4 for natural language understanding
+- Conversation memory to maintain context across interactions
+
+Customer Data Access & Security:
+Order Information:
+- get_order: Retrieves specific order details by order ID
+- get_orders: Searches for multiple orders
+- get_user: Gets customer profile information
+
+Strict Security Protocol:
+- Mandatory email verification before revealing order details
+- Identity protection - never reveals correct email if verification fails
+- Data privacy enforcement
+
+Multi-Source Knowledge Base:
+- Vector Database (Qdrant): Stores and retrieves company documents
+- Google Drive Integration: Automatically processes support documents
+- Terms & Conditions AI: Answers policy questions using stored documentation
+
+Tracking & Logistics:
+- get_tracking: Fetches shipping tracking numbers
+- Integrates with YITH WooCommerce Order & Shipment Tracking plugin
+- Provides real-time shipping status
+
+Human Escalation:
+- human_assistance: Automatically escalates complex issues to human agents via Telegram
+- Maintains conversation context for smooth handoffs
+
+Setup Process (4 Steps):
+- Vector Database Setup: Configure Qdrant collection for document storage
+- Document Processing: Vectorize company documents from Google Drive
+- Telegram Integration: Set up chat ID for human assistance notifications
+- Tracking System: Configure WooCommerce tracking plugin integration
+
+Key Features:
+- Secure customer authentication system
+- Real-time order data access
+- Automated shipping tracking
+- Knowledge base with document search
+- Seamless human escalation
+- Multi-language support (configured for Italian/English)
+
+Use Case:
+This is an enterprise-level customer support automation system ideal for:
+- E-commerce stores using WooCommerce
+- Businesses with high support volume
+- Companies needing 24/7 customer service
+- Stores with complex shipping and return policies

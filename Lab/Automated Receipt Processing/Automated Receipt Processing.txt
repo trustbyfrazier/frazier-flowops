@@ -1,0 +1,8 @@
+Purpose: Automates expense tracking by processing receipts and storing data in Airtable.
+
+What it does:
+- Receives receipt images via webhook
+- Uses Mindee AI to extract key information from receipts (merchant, date, amount, category, etc.)
+- Stores extracted data in Airtable database
+- Generates human-readable expense summaries
+- Creates an automated expense tracking system

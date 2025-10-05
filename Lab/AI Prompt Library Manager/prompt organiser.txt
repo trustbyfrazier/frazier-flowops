@@ -1,0 +1,8 @@
+What it does:
+
+- Triggered by chat messages
+- Uses Google Gemini AI to generate optimized prompts for n8n workflows
+- Automatically categorizes and names prompts using AI
+- Stores prompts in Airtable with name, category, and prompt content
+- Implements structured output parsing to ensure consistent data format
+- Creates a library of reusable, well-structured AI prompts

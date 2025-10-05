@@ -1,0 +1,13 @@
+Purpose: Synchronizes new Shopify products to Odoo ERP system.
+
+What it does:
+- Triggers on new product creation in Shopify
+- Checks for duplicates in Odoo before creating
+- Maps product data including:
+- Product name and description
+- Pricing information
+- Product codes
+- Prevents duplicate entries using smart filtering
+
+Use Case: 
+E-commerce and inventory management integration.
