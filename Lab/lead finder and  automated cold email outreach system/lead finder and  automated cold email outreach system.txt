@@ -1,0 +1,7 @@
+This system automates the entire outbound sales process:
+- Fetches a list of qualified leads from an external database (Instantly.ai).
+- Researches and enriches these leads with company and social media data.
+- Uses AI (GPT-4) to write a unique, personalized 3-email sequence for each lead based on the research.
+- Sends the emails in a timed sequence (with delays between them).
+- Checks for replies before sending follow-ups. If a lead replies, they are marked as such and removed from the sequence.
+- Tracks everything in a Google Sheets "Lead Repository" and requires manual approval via Telegram before sending each batch of emails.
