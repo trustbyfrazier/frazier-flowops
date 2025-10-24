@@ -1,0 +1,4087 @@
+{
+  "name": "Ai mentor and validator",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "6ee4aabc-4d75-4786-b325-3ded83388c65",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        2176,
+        720
+      ],
+      "id": "17c26beb-c670-4379-ab43-fa4932c80fc9",
+      "name": "Webhook",
+      "webhookId": "6ee4aabc-4d75-4786-b325-3ded83388c65"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "54122c65-f914-4ce6-9633-df9a1feb00c5",
+              "name": "name",
+              "value": "={{ $json.query.name }}",
+              "type": "string"
+            },
+            {
+              "id": "7e30d460-0cb2-4646-86df-ebb36571edf8",
+              "name": "email",
+              "value": "={{ $json.query.email }}",
+              "type": "string"
+            },
+            {
+              "id": "26141eb0-2e69-4d79-b670-b646baf881c6",
+              "name": "tone",
+              "value": "={{ $json.query.tone }}",
+              "type": "string"
+            },
+            {
+              "id": "d3d35a6c-6ce3-49f6-b204-225ed2218be9",
+              "name": "telegram_username",
+              "value": "={{ $json.query.telegram }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2400,
+        720
+      ],
+      "id": "666a4cb3-03c6-49d8-9208-ba49ec0f9a3d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $json.name }}",
+            "Email": "={{ $json.email }}",
+            "Tone": "={{ $json.tone }}",
+            "telegram username": "={{ $json.telegram_username }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [],
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2624,
+        720
+      ],
+      "id": "2668fc3f-10ce-4101-8b0f-f0bc9e6b6e23",
+      "name": "Create a record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message",
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        2160,
+        1360
+      ],
+      "id": "7d87481a-f5ab-4273-b4ef-3d40ab3e9f22",
+      "name": "Telegram Trigger",
+      "webhookId": "05921d48-ebee-4625-b59b-6cf5df4de2dc",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "23d221c6-d17a-404c-8432-dc3523c08f3a",
+              "leftValue": "={{ $json[\"Chat ID\"] }}",
+              "rightValue": "={{ $json[\"Chat ID\"] }}",
+              "operator": {
+                "type": "number",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3232,
+        1360
+      ],
+      "id": "056fcfee-b0c5-41aa-bac1-cf59a874aaa7",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7a001377-09b2-480a-9d0e-e52609d17a82",
+              "name": "telegram_username",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.username }}",
+              "type": "string"
+            },
+            {
+              "id": "3d49f7a3-9630-4acf-821f-727cfb0de62a",
+              "name": "Chat ID",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+              "type": "string"
+            },
+            {
+              "id": "0bac2db3-50d8-4170-ad79-32fd40563944",
+              "name": "timestamp",
+              "value": "={{$now}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3456,
+        1264
+      ],
+      "id": "4858c030-c99e-4d30-af90-7ee3ced10139",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Chat ID": "={{ $json[\"Chat ID\"] }}",
+            "telegram username": "={{ $json.telegram_username }}",
+            "Signup Timestamp": "={{ $json.timestamp }}"
+          },
+          "matchingColumns": [
+            "telegram username"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [],
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3680,
+        1264
+      ],
+      "id": "485ddf96-37e4-4395-925b-7c24eb62a7ae",
+      "name": "Update record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "filterByFormula": "=FIND('{{ $json.message.chat.username }}', {telegram username})",
+        "returnAll": false,
+        "limit": 10,
+        "options": {},
+        "sort": {
+          "property": [
+            {
+              "field": "Signup Timestamp",
+              "direction": "desc"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3008,
+        1360
+      ],
+      "id": "79fa853d-094e-4969-824d-04f5f7ad1400",
+      "name": "Search records",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "06e68fe0-4349-46bf-b553-e2c89a91641e",
+              "leftValue": "={{ $('Telegram Trigger').item.json.message.entities }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3456,
+        1456
+      ],
+      "id": "36cd0dbb-4b0e-4bb1-89f2-a038bc60b606",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbuXOnWkBxPVISv",
+          "mode": "list",
+          "cachedResultName": "messages",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblbuXOnWkBxPVISv"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Chat ID": "={{ $json[\"Chat ID\"] }}",
+            "direction": "={{ $json.direction }}",
+            "message_text": "={{ $json.message_text }}",
+            "timestamp": "={{ $json.timestamp }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "direction",
+              "displayName": "direction",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "inbound",
+                  "value": "inbound"
+                },
+                {
+                  "name": "outbound",
+                  "value": "outbound"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "message_text",
+              "displayName": "message_text",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3904,
+        1456
+      ],
+      "id": "8205eae3-c0a5-4ca5-b629-e6c85432e9de",
+      "name": "Create a record1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "47a2434e-8d14-48a7-800f-5654c68fc4a1",
+              "name": "Chat ID",
+              "value": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+              "type": "string"
+            },
+            {
+              "id": "48a45e13-9efe-433a-bff5-abb038a92ca6",
+              "name": "direction",
+              "value": "inbound",
+              "type": "string"
+            },
+            {
+              "id": "c1c3e365-9b34-40ee-8714-d10fcb30aa29",
+              "name": "message_text",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "31b303cc-3a92-4474-9b1f-3d626b1a23fb",
+              "name": "timestamp",
+              "value": "={{$now}}",
+              "type": "string"
+            },
+            {
+              "id": "3ad137d0-5dda-4eca-89dc-9737dca4c1f8",
+              "name": "tone",
+              "value": "={{ $('Search records').item.json.Tone }}",
+              "type": "string"
+            },
+            {
+              "id": "0d7493e2-7230-4040-b569-1e9ce47c583c",
+              "name": "message",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "182c1018-adae-4ddd-a4c1-684986ba4566",
+              "name": "chat Id",
+              "value": "={{ $json[\"Chat ID\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3680,
+        1456
+      ],
+      "id": "3105b023-6d29-430d-9408-01e69a8310da",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbuXOnWkBxPVISv",
+          "mode": "list",
+          "cachedResultName": "messages",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblbuXOnWkBxPVISv"
+        },
+        "filterByFormula": "={Chat ID} = {{ $json.fields['Chat ID'] }}",
+        "returnAll": false,
+        "limit": 7,
+        "options": {},
+        "sort": {
+          "property": [
+            {
+              "field": "No",
+              "direction": "desc"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        4320,
+        1456
+      ],
+      "id": "aaf02d31-716d-4dbb-a7b3-b0d69545fc90",
+      "name": "Search records1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "output = []\n\n# Sort the items by their \"No\" field before looping\nsorted_items = sorted(items, key=lambda x: x[\"json\"].get(\"No\", 0))\n\nfor item in sorted_items:\n    data = item[\"json\"]\n    role = \"User\" if data[\"direction\"] == \"inbound\" else \"AI Mentor\"\n    \n    output.append({\n        \"json\": {\n            \"role\": role,\n            \"text\": data[\"message_text\"]\n        }\n    })\n\nreturn output\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4544,
+        1456
+      ],
+      "id": "96039655-17ae-4346-90ba-7257be981e0f",
+      "name": "Code in Python (Beta)"
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "conversation = \"\"\n\n# Loop through each message in the correct order\nfor item in items:\n    data = item[\"json\"]\n    conversation += f\"{data['role']}: {data['text']}\\n\"\n\n# Return a single output item with the full conversation\nreturn [{\n    \"json\": {\n        \"conversation\": conversation.strip()\n    }\n}]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4752,
+        1456
+      ],
+      "id": "92d8c636-1f76-4024-8a31-64ee9edb7c00",
+      "name": "Code in Python (Beta)1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8b39c9cf-a0af-49c6-8ebb-55f2970a6dd1",
+              "name": "context",
+              "value": "={{ $json.conversation }}",
+              "type": "string"
+            },
+            {
+              "id": "e9d55fde-1eb0-4a6f-8a2f-d61dcf2aa676",
+              "name": "message",
+              "value": "={{ $node[\"Edit Fields2\"].json[\"message\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "ece9268b-a84a-4443-90c4-9f6e904be0e6",
+              "name": "tone",
+              "value": "={{ $node[\"Edit Fields2\"].json[\"tone\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4960,
+        1456
+      ],
+      "id": "6806a722-e0f1-4e33-b6dc-7ffcc776ac38",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are “BuddyCoach,” an intelligent and emotionally-aware dog training mentor.  \nYour role is to act as a **personalized AI dog trainer** who deeply understands dogs and the humans who own them.  \nYou have extensive knowledge in:\n- Dog psychology, behavior patterns, and emotional triggers  \n- Breed-specific temperaments and training techniques  \n- Motivation and consistency coaching for owners  \n- Subtle influence and customer engagement psychology  \n\n---\n\n### 🧩 YOUR PERSONALITY & STYLE\n- {{ $node[\"Edit Fields3\"].json[\"tone\"] }} — but with authority like a seasoned dog trainer.  \n- Speak casually and empathetically; sound like a real person who *cares* about the user’s progress.  \n- Use emojis occasionally for warmth (e.g. 🐶🎯👏) but don’t overdo it.  \n- Your tone adapts to the user — calmer when they’re frustrated, excited when they’re improving.  \n\n---\n\n### 🧠 MEMORY & CONTEXT\nHere is your past conversations: \n{{ $node[\"Edit Fields3\"].json[\"context\"] }}\n\nNow, the user says: \"{{ $node[\"Edit Fields3\"].json[\"message\"] }}\"\n\nYou remember what the user has said before — names of their dog(s), challenges, wins, habits, and preferences.  \nIf they’ve mentioned something before, reference it naturally (e.g., “How’s Max doing with the leash training?”).  \n\n\n---\n\n### 🎯 GOAL\nYour goal is to:\n1. Help the user improve their dog’s behavior with realistic, step-by-step guidance.  \n2. Check in daily with short motivational nudges (“Let’s do a quick 5-min leash walk today, yeah?”).  \n3. Track progress and celebrate small wins.  \n4. Build trust and emotional connection with the user.  \n5. Gradually uncover their *real motivations* — why they want their dog trained (status, peace, bonding, etc.).  \n6. Use this insight later for subtle monetization cues (“I can suggest a few advanced guides once you’re ready — want me to?”).  \n\n---\n\n### 💰 HIDDEN SALES STRATEGY\nYou don’t sell directly. Instead:\n- Ask discovery-style questions to reveal the user’s deeper needs (“What’s the one thing you wish your dog would stop doing?”).  \n- When appropriate, gently recommend resources, premium plans, or “advanced training packs.”  \n- Always sound helpful, never salesy — think *coach*, not marketer.  \n\n---\n\n### 🗓 DAILY INTERACTION LOGIC\nIf the user hasn’t checked in for a while, gently remind them.  \nExample:  \n> “Hey, we haven’t trained in a bit! Let’s do something easy today so we don’t lose momentum 🐾”  \n\nIf the user is active, keep them engaged with small new tasks or insights related to their dog’s breed or behavior.\n\n---\n\n### 🧭 RESPONSE FORMAT\nYour replies should feel natural and conversational.  \nDon’t repeat system instructions or meta info.  \nJust respond to the user as their personalized dog trainer.  \nMake sure each response adds value — either emotional support, motivation, or an actionable tip.  \n\n---\n\nNow, respond to the latest user message as “BuddyCoach,” using the context above.\n",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        2800,
+        1728
+      ],
+      "id": "a1a29525-47af-49b1-9e33-712f0de2970a",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3.1:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        1920
+      ],
+      "id": "3a362e65-2ab7-4a0d-bee6-91e3ee395015",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Yf4vuhsmd1gYjJP0",
+          "name": "OpenRouter account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $node[\"Edit Fields2\"].json[\"chat Id\"] }}",
+        "text": "={{ $('Code in Python (Beta)5').item.json.cleanText }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3472,
+        1728
+      ],
+      "id": "d418e30c-25b4-4935-9d0f-b9a2882eaebf",
+      "name": "Send a text message",
+      "webhookId": "1edac6bc-8845-4eef-b72f-2bcd881795b1",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbuXOnWkBxPVISv",
+          "mode": "list",
+          "cachedResultName": "messages",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblbuXOnWkBxPVISv"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "direction": "outbound",
+            "timestamp": "={{ $json.time }}",
+            "Chat ID": "={{ $json[\"chat id\"] }}",
+            "message_text": "={{ $json.message }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "No",
+              "displayName": "No",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "direction",
+              "displayName": "direction",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "inbound",
+                  "value": "inbound"
+                },
+                {
+                  "name": "outbound",
+                  "value": "outbound"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "message_text",
+              "displayName": "message_text",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3824,
+        1728
+      ],
+      "id": "e2ea4d50-b747-49bd-973b-6a8b1fdbbfaf",
+      "name": "Create a record2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d9afc7e7-30ef-42bb-9d82-7a470ba9d5f2",
+              "name": "chat id",
+              "value": "={{ $json.result.chat.id }}",
+              "type": "string"
+            },
+            {
+              "id": "6e7674c9-f6f7-4abc-8220-d8fabb3996d0",
+              "name": "message",
+              "value": "={{ $json.result.text }}",
+              "type": "string"
+            },
+            {
+              "id": "499cd64a-7844-4eff-9702-dd44ffef20f7",
+              "name": "time",
+              "value": "={{$now}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3632,
+        1728
+      ],
+      "id": "83d37d28-2ee5-4bd6-ac02-ee7f3f2e188d",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $node[\"Edit Fields2\"].json[\"chat Id\"] }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3296,
+        1728
+      ],
+      "id": "e2287c63-7431-4511-b031-efacc7315ca4",
+      "name": "Send a chat action1",
+      "webhookId": "2814aae7-66ad-4cd4-8cb1-16139830b783",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $node[\"Edit Fields2\"].json[\"chat Id\"] }}",
+        "text": "BuddyCoach is thinking... 🐾",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        5184,
+        1456
+      ],
+      "id": "5ed06a5d-ca8b-4bbc-8c36-dfbc2d78766b",
+      "name": "Send a text message1",
+      "webhookId": "1cb54aa6-f634-4cb4-9c48-a65123767d5a",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Edit Fields1').item.json['Chat ID'] }}",
+        "text": "Hey there 👋 I’m BuddyCoach, your personalized AI dog training mentor 🐾  I’m here to help you understand your dog like never before, their habits, behavior patterns, emotions, and even those little quirks that make them who they are.  we can begin!!",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3888,
+        1264
+      ],
+      "id": "6ac4babe-a419-4dac-bbd3-2cbf25d07a6f",
+      "name": "Send a text message2",
+      "webhookId": "911ddd54-72f4-44fd-b126-5be8dd92ef50",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 18
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        2128,
+        2080
+      ],
+      "id": "44be23f2-5df7-4a3a-9185-18b772524ec1",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2336,
+        2080
+      ],
+      "id": "ae4dc82f-70ac-4f3e-be92-5e73edf489ca",
+      "name": "Search records2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2544,
+        2080
+      ],
+      "id": "1f1fce59-eeac-41f3-b1b2-d2f41b96422f",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbuXOnWkBxPVISv",
+          "mode": "list",
+          "cachedResultName": "messages",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblbuXOnWkBxPVISv"
+        },
+        "filterByFormula": "={Chat ID} = {{ $('Search records2').item.json['Chat ID'] }}",
+        "options": {},
+        "sort": {
+          "property": [
+            {
+              "field": "No",
+              "direction": "desc"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2784,
+        2128
+      ],
+      "id": "263a76f1-e12a-4642-a9b6-0c26c70ecdc2",
+      "name": "Search records3",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "output = []\n\n# Sort the items by their \"No\" field before looping\nsorted_items = sorted(items, key=lambda x: x[\"json\"].get(\"No\", 0))\n\nfor item in sorted_items:\n    data = item[\"json\"]\n    role = \"User\" if data[\"direction\"] == \"inbound\" else \"AI Mentor\"\n    \n    output.append({\n        \"json\": {\n            \"role\": role,\n            \"text\": data[\"message_text\"]\n        }\n    })\n\nreturn output\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2992,
+        2128
+      ],
+      "id": "d6719b73-b83c-4e32-8c6e-accf0a94d1ba",
+      "name": "Code in Python (Beta)2"
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "conversation = \"\"\n\n# Loop through each message in the correct order\nfor item in items:\n    data = item[\"json\"]\n    conversation += f\"{data['role']}: {data['text']}\\n\"\n\n# Return a single output item with the full conversation\nreturn [{\n    \"json\": {\n        \"conversation\": conversation.strip()\n    }\n}]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3184,
+        2128
+      ],
+      "id": "b061a2fe-8216-4a29-a39f-78ddc751ccbd",
+      "name": "Code in Python (Beta)3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8b39c9cf-a0af-49c6-8ebb-55f2970a6dd1",
+              "name": "context",
+              "value": "={{ $json.conversation }}",
+              "type": "string"
+            },
+            {
+              "id": "4cd2abae-1f90-46c4-a4b2-a07a0fea4620",
+              "name": "name",
+              "value": "={{ $node[\"Loop Over Items\"].json[\"Name\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "bcc83770-dfb0-4c29-aa70-b78c8ce1f923",
+              "name": "tone",
+              "value": "={{ $node[\"Loop Over Items\"].json[\"Tone\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3376,
+        2128
+      ],
+      "id": "885fa6a3-3b0c-46c4-982e-c70ffab7256a",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are “BuddyCoach,” the user’s intelligent and personalized AI dog-training mentor.\n\nToday’s goal: send a daily check-in message that feels personal, engaging, and useful — not robotic or repetitive.\n\nYou know the user’s name and some details about their dog, their past conversations, and their current training goals.\n\n---\n\n### 🧩 CONTEXT\nUser’s name: {{ $json.name }}\nTone you should adapt: {{ $json.tone }}\nPrevious conversation:\n{{ $json.context }}\n---\n\n### 🎯 OBJECTIVE\nWrite a single **daily check-in message** that:\n- Feels *natural*, not automated or repetitive.  \n- Reinforces progress or gently reminds the user to continue training.  \n- Gives a small, achievable tip or task (e.g., “Try 5 mins of focus work today before dinner”).  \n- Ends with an *open-ended question* to spark a reply.  \n- Includes light motivation and emotional connection.  \n- Feels like it’s coming from a caring, intelligent dog coach who remembers them personally.  \n\n---\n\n### 💬 EXAMPLES OF TONE\n- “Hey {{ $json.name }}! How’s your dog doing today? 🐾  \n  Let’s keep that momentum — want to try a quick sit-stay before breakfast and tell me how it goes?”\n\n- “Yo {{ $json.name }}, just checking in 👋  \n  Yesterday’s leash work sounded solid — want to add a 5-minute practice before your walk today?”\n\n- “Morning  {{ $json.name }}☀️  \n  Remember how your pup nailed that no-bark trick? Let’s do a short recall game today — they’ll love it!  \n  How’s their energy been lately?”\n\n---\n\n### ⚙️ RULES\n- Always sound human, warm, and conversational.  \n- Never guilt-trip or pressure the user.  \n- Always leave space for the user to respond.  \n- If the user hasn’t engaged recently, re-engage gently with curiosity (“Been a while — how’s your little champ doing?”).  \n- Keep it 2–4 short sentences max.  \n\n---\n\nNow, write today’s check-in message as BuddyCoach.\n",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        3584,
+        2128
+      ],
+      "id": "83940e92-205e-4602-927b-7a414b1f25ca",
+      "name": "Basic LLM Chain1"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3.1:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        3584,
+        2304
+      ],
+      "id": "28acdeec-c8d7-4b49-8a4b-94661f1faa48",
+      "name": "OpenRouter Chat Model1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "2WxXKv1AdnZLyO55",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $node[\"Loop Over Items\"].json[\"Chat ID\"] }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4096,
+        2128
+      ],
+      "id": "244b4754-2794-4fc2-8a1c-1caffee72870",
+      "name": "Send a chat action2",
+      "webhookId": "2814aae7-66ad-4cd4-8cb1-16139830b783",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $node[\"Loop Over Items\"].json[\"Chat ID\"] }}",
+        "text": "={{ $('Code in Python (Beta)4').item.json.cleanText }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4272,
+        2128
+      ],
+      "id": "053c2c18-83ea-43e2-9fd6-6e0dadde3f1a",
+      "name": "Send a text message3",
+      "webhookId": "1edac6bc-8845-4eef-b72f-2bcd881795b1",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import re\n\noutput = []\n\n# Grab text from possible keys\ndata = items[0][\"json\"]\ntext = data.get(\"text\") or data.get(\"message\") or data.get(\"response\") or \"\"\n\n# Clean up the weird tokens\ntext = re.sub(r\"<\\｜begin▁of▁sentence\\｜>\", \"\", text)\ntext = re.sub(r\"<\\|endoftext\\|>\", \"\", text)\ntext = text.strip()\n\n# Return in proper n8n format\noutput.append({\n    \"json\": {\n        \"cleanText\": text\n    }\n})\n\nreturn output\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3904,
+        2128
+      ],
+      "id": "aa54e647-c520-413f-b88c-3b2391aaa69c",
+      "name": "Code in Python (Beta)4"
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import re\n\noutput = []\n\n# Grab text from possible keys\ndata = items[0][\"json\"]\ntext = data.get(\"text\") or data.get(\"message\") or data.get(\"response\") or \"\"\n\n# Clean up the weird tokens\ntext = re.sub(r\"<\\｜begin▁of▁sentence\\｜>\", \"\", text)\ntext = re.sub(r\"<\\|endoftext\\|>\", \"\", text)\ntext = text.strip()\n\n# Return in proper n8n format\noutput.append({\n    \"json\": {\n        \"cleanText\": text\n    }\n})\n\nreturn output\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3104,
+        1728
+      ],
+      "id": "5d5055ad-a057-411a-b103-4e656933487a",
+      "name": "Code in Python (Beta)5"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "=Yo {{ $json.Name }} 😄\nNot sure what that means — wanna tell me what’s up with your dog today? I’m all ears 🐾",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3232,
+        1504
+      ],
+      "id": "f47a68c6-a580-46d4-b80b-6b045a89e599",
+      "name": "Send a text message4",
+      "webhookId": "6c2e4191-5caa-451b-a599-dcedf62d7694",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Last Active": "={{ $json.fields.timestamp }}",
+            "Chat ID": "={{ $('Edit Fields2').item.json[\"Chat ID\"] }}"
+          },
+          "matchingColumns": [
+            "Chat ID"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Active",
+              "displayName": "Last Active",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        4112,
+        1456
+      ],
+      "id": "010eaf7f-2741-492d-83c2-d12ac5ac905d",
+      "name": "Update record1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        2128,
+        2496
+      ],
+      "id": "d9edb855-2d31-42c3-acc2-8f19928599a9",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2304,
+        2496
+      ],
+      "id": "a48f5bf8-e00f-496f-b939-f68cecb82fe7",
+      "name": "Search records4",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2512,
+        2496
+      ],
+      "id": "a73f935c-6394-4ea8-bdb4-c9ff98846650",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbuXOnWkBxPVISv",
+          "mode": "list",
+          "cachedResultName": "messages",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblbuXOnWkBxPVISv"
+        },
+        "filterByFormula": "={Chat ID} = {{ $json['Chat ID'] }}",
+        "options": {},
+        "sort": {
+          "property": [
+            {
+              "field": "message_text",
+              "direction": "desc"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2720,
+        2512
+      ],
+      "id": "b321af7d-0bd9-403f-a5bb-f3839e5f2c43",
+      "name": "Search records5",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "output = []\n\n# 'items' is already a list of message objects (each with .json)\nmessage_count = len(items)\n\n# Return total count\noutput.append({\n    \"json\": {\n        \"messages\": message_count\n    }\n})\n\nreturn output\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2928,
+        2512
+      ],
+      "id": "d697fad9-1788-41f1-aac6-15ca8c4cb374",
+      "name": "Code in Python (Beta)6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c81784a5-6438-4871-805f-4251e609696e",
+              "name": "Message  Count",
+              "value": "={{ $json.messages }}",
+              "type": "string"
+            },
+            {
+              "id": "8cb8c2a3-a2f1-48ae-b8b4-035bef47a7c9",
+              "name": "Chat ID",
+              "value": "={{ $node[\"Loop Over Items1\"].json[\"Chat ID\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3136,
+        2512
+      ],
+      "id": "f5165e58-2926-46ba-a513-ad1c7b7a757d",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Chat ID": "={{ $json[\"Chat ID\"] }}",
+            "number of messages": "={{ $json[\"Message  Count\"] }}"
+          },
+          "matchingColumns": [
+            "Chat ID"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Active",
+              "displayName": "Last Active",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "number of messages",
+              "displayName": "number of messages",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3312,
+        2512
+      ],
+      "id": "312c12b4-6466-406f-9d8b-ade69147562d",
+      "name": "Update record2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 23
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        2128,
+        2880
+      ],
+      "id": "02e5062c-0b00-4851-af23-f2e6bc184696",
+      "name": "Schedule Trigger2"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2288,
+        2880
+      ],
+      "id": "cecab166-0d45-46a5-8784-d898980f064f",
+      "name": "Search records6",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2496,
+        2880
+      ],
+      "id": "324f8da1-2906-406c-b4d9-ead27b3abf1b",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "38a84105-3c49-49c7-a85c-74881eace83e",
+              "leftValue": "={{ $json[\"number of messages\"] }}",
+              "rightValue": 49,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2704,
+        2976
+      ],
+      "id": "abc8432c-fe03-4594-9042-5bbb4661c1d9",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "60469d3f-79a0-44e1-8637-9a126907f5d4",
+              "leftValue": "={{ $json[\"Feedback Rating\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2912,
+        2960
+      ],
+      "id": "6a7f200a-a3e6-4eb3-afa9-8887c527ccb0",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $node[\"Loop Over Items2\"].json[\"Chat ID\"] }}",
+        "text": "Please rate your experience with the bot 👇",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "⭐ Excellent",
+                    "additionalFields": {
+                      "callback_data": "5"
+                    }
+                  },
+                  {
+                    "text": "👍 Good",
+                    "additionalFields": {
+                      "callback_data": "4"
+                    }
+                  },
+                  {
+                    "text": "😐 Okay",
+                    "additionalFields": {
+                      "callback_data": "3"
+                    }
+                  },
+                  {
+                    "text": "👎 Poor",
+                    "additionalFields": {
+                      "callback_data": "2"
+                    }
+                  },
+                  {
+                    "text": "💀Very bad",
+                    "additionalFields": {
+                      "callback_data": "1"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3136,
+        2944
+      ],
+      "id": "1908ae6e-5ea2-4cac-9ab6-c0f7360872be",
+      "name": "Send a text message5",
+      "webhookId": "f4a9164c-05ce-4955-a374-ee206f6e2e84",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json[\"Chat ID\"] }}",
+        "text": "=Thanks for the feedback, ! Please tell us what we can improve 👇",
+        "replyMarkup": "forceReply",
+        "forceReply": {
+          "force_reply": true
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3392,
+        1008
+      ],
+      "id": "ec34ec23-4c52-47a6-9e29-ad7fd838b40d",
+      "name": "Send a text message6",
+      "webhookId": "185a2a54-8f78-431b-a154-de470fd7d210",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b33d8577-52d1-4ff7-9702-3ab922f73339",
+              "name": "Chat ID",
+              "value": "={{ $json.callback_query.message.chat.id }}",
+              "type": "string"
+            },
+            {
+              "id": "c847e624-45e1-4d4c-9536-232e40b52b0f",
+              "name": "Rating",
+              "value": "={{ $json.callback_query.message.reply_markup.inline_keyboard[0][0].callback_data }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3184,
+        1008
+      ],
+      "id": "1a7dc8c5-7c37-4e39-8b23-c87b244fd9fa",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "46181476-0360-4d70-96d2-f8d8a60ed9f0",
+              "leftValue": "={{ $json.callback_query.message.reply_markup.inline_keyboard }}",
+              "rightValue": "={{ $json.message.reply_to_message.text }}",
+              "operator": {
+                "type": "array",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1808,
+        1280
+      ],
+      "id": "099b2000-2863-42b1-969b-fb1e88a84a35",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.reply_to_message.chat.id }}",
+        "text": "Got it, thanks for your feedback! 🙌🐾 We’re taking notes and improving fast — your insights are pure gold 💡✨",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2176,
+        1072
+      ],
+      "id": "fdbf6102-44c9-40d7-b572-9a9d96e87a3a",
+      "name": "Send a text message7",
+      "webhookId": "d838f33d-8828-4220-9036-b3e864ff204e",
+      "credentials": {
+        "telegramApi": {
+          "id": "Mmd98Qy1DkV8Jpn2",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d7c9d8f2-a2cf-492e-b310-fdfab050e502",
+              "name": "review",
+              "value": "={{ $('If4').item.json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "c2053788-fb5d-4122-8ef7-1f664c47300b",
+              "name": "Chat  ID",
+              "value": "={{ $('If4').item.json.message.reply_to_message.chat.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2384,
+        1072
+      ],
+      "id": "73bce0a2-dde1-4739-9a0a-ecc102992921",
+      "name": "Edit Fields8"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Reviews": "={{ $json.review }}",
+            "Chat ID": "={{ $json[\"Chat  ID\"] }}"
+          },
+          "matchingColumns": [
+            "Chat ID"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Active",
+              "displayName": "Last Active",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "number of messages",
+              "displayName": "number of messages",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Reviews",
+              "displayName": "Reviews",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2592,
+        1072
+      ],
+      "id": "6580ed8d-a046-43e9-aaf6-180b85322b1f",
+      "name": "Update record3",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Chat ID": "={{ $('Edit Fields7').item.json[\"Chat ID\"] }}",
+            "Feedback Rating": "={{ $('Edit Fields7').item.json.Rating }}"
+          },
+          "matchingColumns": [
+            "Chat ID"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Active",
+              "displayName": "Last Active",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "number of messages",
+              "displayName": "number of messages",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Reviews",
+              "displayName": "Reviews",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3600,
+        1008
+      ],
+      "id": "3b2620e0-58f2-4516-96fd-0450b035f0ff",
+      "name": "Update record4",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        2144,
+        3264
+      ],
+      "id": "feaeb301-5ecc-48e0-8e7c-ab7d254ef5ce",
+      "name": "Schedule Trigger3"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2320,
+        3264
+      ],
+      "id": "e0eb3e26-85f2-44df-895d-3ccba87a624e",
+      "name": "Search records7",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2528,
+        3264
+      ],
+      "id": "badc8ee8-93b0-4354-b264-c58007d3a77a",
+      "name": "Loop Over Items3"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblbuXOnWkBxPVISv",
+          "mode": "list",
+          "cachedResultName": "messages",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblbuXOnWkBxPVISv"
+        },
+        "filterByFormula": "={Chat ID} = {{ $json['Chat ID'] }}",
+        "options": {},
+        "sort": {
+          "property": [
+            {
+              "field": "No",
+              "direction": "desc"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2896,
+        3328
+      ],
+      "id": "2d3ae619-f3c8-443b-9035-b5dc3ea9854a",
+      "name": "Search records8",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "output = []\n\n# Sort the items by their \"No\" field before looping\nsorted_items = sorted(items, key=lambda x: x[\"json\"].get(\"No\", 0))\n\nfor item in sorted_items:\n    data = item[\"json\"]\n    role = \"User\" if data[\"direction\"] == \"inbound\" else \"AI Mentor\"\n    \n    output.append({\n        \"json\": {\n            \"role\": role,\n            \"text\": data[\"message_text\"]\n        }\n    })\n\nreturn output\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3104,
+        3328
+      ],
+      "id": "e68e0d1b-c989-471b-819f-8ad831f71af7",
+      "name": "Code in Python (Beta)7"
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "conversation = \"\"\n\n# Loop through each message in the correct order\nfor item in items:\n    data = item[\"json\"]\n    conversation += f\"{data['role']}: {data['text']}\\n\"\n\n# Return a single output item with the full conversation\nreturn [{\n    \"json\": {\n        \"conversation\": conversation.strip()\n    }\n}]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3296,
+        3328
+      ],
+      "id": "2c38eeb2-f64f-442d-bedc-ab865fffd759",
+      "name": "Code in Python (Beta)8"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8b39c9cf-a0af-49c6-8ebb-55f2970a6dd1",
+              "name": "context",
+              "value": "={{ $json.conversation }}",
+              "type": "string"
+            },
+            {
+              "id": "4cd2abae-1f90-46c4-a4b2-a07a0fea4620",
+              "name": "name",
+              "value": "={{ $node[\"Loop Over Items3\"].json[\"Name\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3472,
+        3328
+      ],
+      "id": "15252430-539c-4056-a608-e1937b1de25e",
+      "name": "Edit Fields9"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an AI analytics engine designed to evaluate user conversations for engagement and upsell potential.\n\nYour job is to analyze the following conversation between an AI mentor (dog trainer) and a user.\n\nUse behavioral, emotional, and linguistic cues to produce two key metrics, each scored from 0–100:\n\n1. **Engagement Score (0–100)** — measures how emotionally and actively the user interacts with the AI.  \n   - Factors: message frequency, response length, emotional tone, curiosity level, and consistency across days.  \n   - High score = deeply engaged, emotionally invested, or consistent daily chatter.  \n   - Low score = short, detached, or infrequent replies.\n\n2. **Upsell Opportunity Score (0–100)** — measures how likely the user is to purchase or respond to offers.  \n   - Factors: mentions of problems, goals, or desires; openness to advice; frustration or emotional vulnerability; curiosity about next steps or upgrades; moments of trust or dependence.  \n   - High score = strong buying signals, expressed needs, or emotional investment that can be monetized.  \n   - Low score = casual, transactional, or disinterested tone.\n\n---\n\n### 🧩 Data:\nHere is the past conversation:\n{{ $json.context }}\n\n---\n\n### 🎯 Output format:\nReturn your response **strictly** as JSON in this exact structure:\n{\n  \"engagement_score\": <number between 0 and 100>,\n  \"upsell_opportunity_score\": <number between 0 and 100>,\n  \"summary\": \"<2-3 sentence summary explaining your reasoning>\"\n}\n\nBe objective and consistent. Do not include any additional text outside the JSON.\n",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        3680,
+        3328
+      ],
+      "id": "8ab0e97b-a665-4670-8502-a799178789ac",
+      "name": "Basic LLM Chain2"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3.1:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        3568,
+        3536
+      ],
+      "id": "4cefcc1a-d761-46cc-be9a-5078e20f9c8c",
+      "name": "OpenRouter Chat Model2",
+      "credentials": {
+        "openRouterApi": {
+          "id": "2WxXKv1AdnZLyO55",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import json\nimport re\n\noutput = []\n\n# Get the raw text from the incoming item\ndata = items[0][\"json\"]\nraw = data.get(\"text\", \"\")\n\n# Clean unwanted tokens and whitespace\nclean = re.sub(r\"<\\｜begin▁of▁sentence\\｜>\", \"\", raw).strip()\n\n# Parse the inner JSON safely\ntry:\n    parsed = json.loads(clean)\nexcept json.JSONDecodeError:\n    parsed = {}\n\n# Return as separate fields\noutput.append({\n    \"json\": {\n        \"engagement_score\": parsed.get(\"engagement_score\"),\n        \"upsell_opportunity_score\": parsed.get(\"upsell_opportunity_score\"),\n        \"summary\": parsed.get(\"summary\")\n    }\n})\n\nreturn output\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4032,
+        3328
+      ],
+      "id": "7187a1ba-e59b-4407-ad2a-8a896532148e",
+      "name": "Code in Python (Beta)9"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5ad919a8-77a0-428f-9ab9-5b77bb149c57",
+              "name": "Chat ID",
+              "value": "={{ $node[\"Loop Over Items3\"].json[\"Chat ID\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "eebbaf2e-82dd-40ef-9db4-1b2e61e577fd",
+              "name": "engagement score",
+              "value": "={{ $json.engagement_score }}",
+              "type": "string"
+            },
+            {
+              "id": "45747507-c405-4032-af4c-057cfaa1adae",
+              "name": "upsell ",
+              "value": "={{ $json.upsell_opportunity_score }}",
+              "type": "string"
+            },
+            {
+              "id": "c7c46896-b080-4438-bd71-7047a3375d68",
+              "name": "summary",
+              "value": "={{ $json.summary }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4240,
+        3328
+      ],
+      "id": "11d3daca-aa67-4735-ad79-fba610f7a258",
+      "name": "Edit Fields10"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appWI6XBZrYDZEKvH",
+          "mode": "list",
+          "cachedResultName": "Ai mentor and validator",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblNP216siWxlpV8k",
+          "mode": "list",
+          "cachedResultName": "Users",
+          "cachedResultUrl": "https://airtable.com/appWI6XBZrYDZEKvH/tblNP216siWxlpV8k"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Chat ID": "={{ $json[\"Chat ID\"] }}",
+            "Upsell Opportunity": "={{ $json[\"upsell \"] }}",
+            "user summary": "={{ $json.summary }}",
+            "Engagement Score": "={{ $json[\"engagement score\"] }}"
+          },
+          "matchingColumns": [
+            "Chat ID"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "User ID",
+              "displayName": "User ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "telegram username",
+              "displayName": "telegram username",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Chat ID",
+              "displayName": "Chat ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Tone",
+              "displayName": "Tone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Signup Timestamp",
+              "displayName": "Signup Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Engagement Score",
+              "displayName": "Engagement Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Feedback Rating",
+              "displayName": "Feedback Rating",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Active",
+              "displayName": "Last Active",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "number of messages",
+              "displayName": "number of messages",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Reviews",
+              "displayName": "Reviews",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Upsell Opportunity",
+              "displayName": "Upsell Opportunity",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "user summary",
+              "displayName": "user summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        4432,
+        3328
+      ],
+      "id": "94108750-69a3-4bbc-8fcf-ecad11461633",
+      "name": "Update record5",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "iW1FsYX6FROZrOFl",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9f2cc01a-a04c-4607-bb0d-a3b9af08de62",
+              "leftValue": "={{ $json.callback_query.message.entities[1].url }}",
+              "rightValue": "={{ $json.callback_query.message.entities[1].url }}",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2368,
+        1360
+      ],
+      "id": "2a80ac48-70e4-4759-8358-b70532e1e4ce",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "46181476-0360-4d70-96d2-f8d8a60ed9f0",
+              "leftValue": "={{ $json.message.reply_to_message.text }}",
+              "rightValue": "={{ $json.message.reply_to_message.text }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "ce68c43d-0cf9-4d95-bef3-06ee1054bac2",
+              "leftValue": "={{ $json.message.entities[0].type }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "d99167d8-3c2b-4697-a59d-154c3719e94b",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2640,
+        1344
+      ],
+      "id": "f2bb5a34-92c4-456e-99dc-a72ae14d7334",
+      "name": "If6"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4032,
+        1248
+      ],
+      "id": "a052dcd7-7b35-4615-ac07-929d831f96ff",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2560,
+        1872
+      ],
+      "id": "d2c772f6-28be-4d50-8d8e-e48ee339f48b",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2704,
+        2352
+      ],
+      "id": "d179018c-6b4c-4023-9f03-c27897553751",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2704,
+        2784
+      ],
+      "id": "646b4739-dadd-48a6-901c-a6ae85f8e68b",
+      "name": "No Operation, do nothing3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2736,
+        3168
+      ],
+      "id": "1c0e5c25-322f-4816-8c9d-71bc27b1358c",
+      "name": "No Operation, do nothing4"
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5392,
+        1456
+      ],
+      "id": "f1e63f1a-03db-4f62-9f59-0930e814a325",
+      "name": "Wait",
+      "webhookId": "7f40e854-bc64-4726-aac7-d1b7baa7edb5"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Update record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Create a record1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record1": {
+      "main": [
+        [
+          {
+            "node": "Update record1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records1": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Create a record2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a chat action1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search records2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Search records3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records3": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)2": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain1": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a chat action2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)4": {
+      "main": [
+        [
+          {
+            "node": "Send a chat action2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)5": {
+      "main": [
+        [
+          {
+            "node": "Send a chat action1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record1": {
+      "main": [
+        [
+          {
+            "node": "Search records1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Search records4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Search records5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records5": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)6": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Update record2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger2": {
+      "main": [
+        [
+          {
+            "node": "Search records6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Send a text message6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message7": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields8": {
+      "main": [
+        [
+          {
+            "node": "Update record3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message6": {
+      "main": [
+        [
+          {
+            "node": "Update record4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger3": {
+      "main": [
+        [
+          {
+            "node": "Search records7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records7": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Search records8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records8": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)7": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)8": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields9": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain2": {
+      "main": [
+        [
+          {
+            "node": "Code in Python (Beta)9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Beta)9": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields10": {
+      "main": [
+        [
+          {
+            "node": "Update record5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If6": {
+      "main": [
+        [
+          {
+            "node": "Search records",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message2": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record2": {
+      "main": [
+        []
+      ]
+    },
+    "Update record4": {
+      "main": [
+        []
+      ]
+    },
+    "Update record3": {
+      "main": [
+        []
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "U2bJcjAuUqEx3WSB",
+    "timeSavedPerExecution": 20
+  },
+  "versionId": "f8f7a63a-8eb6-4246-8116-5781eb200230",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c0f434f1995be6cdf16ce5b17e147fa9b527e68219702aa45ab7c091a79a2513"
+  },
+  "id": "U2bJcjAuUqEx3WSB",
+  "tags": []
+}

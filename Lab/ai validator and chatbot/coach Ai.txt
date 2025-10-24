@@ -1,0 +1,75 @@
+Core Purpose
+A personalized AI dog training coach that interacts with users via Telegram, remembers conversation history, and provides intelligent coaching while tracking user engagement.
+
+🏗 System Architecture
+1. User Onboarding & Registration
+- Webhook-based signup - Users can register via web form
+- Telegram integration - Auto-detects when users message the bot
+- Airtable database - Stores user profiles (name, email, tone preference, Telegram username, chat ID)
+- Automatic profile creation - Creates user records when they first interact
+
+2. Real-time AI Coaching
+- Smart conversation memory - Retrieves past 7 messages to maintain context
+- Personalized responses - Adapts tone based on user preference
+- DeepSeek AI model - Powers the "BuddyCoach" persona via OpenRouter
+- Message logging - Stores all inbound/outbound messages with timestamps
+
+3. Automated Engagement Features
+🕐 Daily Check-ins (Every 18 hours)
+- Sends personalized follow-up messages
+- References past conversations and progress
+- Encourages consistent training
+
+📊 Message Analytics (Every 12 hours)
+- Tracks message counts per user
+- Updates engagement metrics in database
+
+⭐ Feedback Collection (Every 23 hours)
+- Automatically requests ratings after 50+ messages
+- Uses interactive buttons (⭐ Excellent, 👍 Good, etc.)
+- Collects detailed feedback via reply system
+
+📈 AI Analytics (Every 24 hours)
+- Analyzes conversation quality using AI
+Generates:
+- Engagement Score (0-100) - User interaction quality
+- Upsell Opportunity Score (0-100) - Monetization potential
+- Behavioral Summary - AI-generated insights
+
+🤖 BuddyCoach AI Persona
+The AI acts as an "intelligent and emotionally-aware dog training mentor" with:
+- Breed-specific knowledge and dog psychology expertise
+- Adaptive tone - matches user's preferred communication style
+- Memory retention - remembers dog names, challenges, and progress
+- Subtle monetization strategy - identifies opportunities for premium offers
+- Emotional intelligence - adjusts tone based on user frustration/excitement
+
+🔧 Technical Features
+Data Management
+- Airtable Integration: Two main tables - Users & Messages
+- Real-time Updates: Live tracking of user activity and engagement
+- Conversation History: Full message logging with timestamps
+
+Smart Automation
+- Conditional Logic: Different flows for new vs returning users
+- Batch Processing: Handles multiple users simultaneously
+- Error Handling: Graceful fallbacks for various scenarios
+
+User Experience
+- Typing Indicators: Shows "BuddyCoach is thinking..."
+- Quick Responses: Handles unknown commands gracefully
+- Feedback Loop: Continuous improvement based on user ratings
+
+🎪 Business Model
+While appearing as a free coaching service, the system is designed for:
+- User engagement maximization
+- Upsell opportunity identification
+- Premium service promotion (guides, advanced training packs)
+- Long-term customer relationship building
+
+📈 Analytics & Insights
+The workflow provides comprehensive business intelligence:
+- User engagement levels
+- Conversation quality metrics
+- Monetization potential scoring
+- Behavioral patterns analysis
