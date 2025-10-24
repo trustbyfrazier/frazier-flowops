@@ -1,0 +1,13 @@
+This appears to be very similar to the first workflow but focuses more on vector database operations:
+
+What it does:
+- Comprehensive guide for setting up and managing vector databases in Supabase
+- Demonstrates full CRUD operations (Create, Read, Update, Delete) for vector data
+- Includes detailed documentation via sticky notes
+
+Key Operations Covered:
+- Preparation: Setting up pgvector extension and database schema
+- Insertion: Adding documents with embeddings
+- Upserting: Updating existing vector records
+- Retrieval: Similarity search and Q&A
+- Deletion: Removing records (using HTTP requests since n8n lacks native delete)

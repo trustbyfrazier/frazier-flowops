@@ -1,0 +1,12 @@
+This is an A/B testing system for AI chat agents:
+
+What it does:
+- Randomly assigns chat sessions to either a "baseline" or "alternative" prompt
+- Tests different AI agent behaviors to compare performance
+- Maintains session consistency so users see the same version throughout their chat
+
+Key Components:
+- Session Management: Tracks user sessions in Supabase and assigns them to test groups
+- Prompt Testing: Tests two different system prompts ("The dog's name is Ben" vs "The dog's name is Tom")
+- AI Agent: Uses OpenAI with memory to maintain conversation context
+- Split Logic: 50/50 random assignment for new sessions

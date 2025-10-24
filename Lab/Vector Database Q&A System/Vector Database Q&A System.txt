@@ -1,0 +1,11 @@
+This is a document Q&A chatbot that uses Supabase as a vector database:
+
+What it does:
+- Creates an AI-powered chatbot that can answer questions about the book "How To Transform Your Life" by Geshe Kelsang Gyatso
+- Processes an EPUB file from Google Drive, converts it to embeddings, and stores them in Supabase
+- Uses retrieval-augmented generation (RAG) to find relevant content and answer user questions
+
+Key Components:
+- Data Ingestion: Downloads EPUB → Text splitting → OpenAI embeddings → Stores in Supabase
+- Chat Interface: Webhook-triggered chat that retrieves relevant content and generates answers
+- Vector Operations: Insertion, retrieval, and similarity search using OpenAI embeddings
