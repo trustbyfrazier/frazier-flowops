@@ -1,0 +1,359 @@
+{
+  "name": "A/B Split Testing",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "03ecf7f5-4d07-4bb5-bd1f-34fd9c94c3a7",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        672,
+        416
+      ],
+      "webhookId": "334e3a8d-73d2-4d3c-9927-158c1169ef5e",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('When chat message received').item.json.chatInput }}",
+        "options": {
+          "systemMessage": "={{ $json.prompt }}"
+        }
+      },
+      "id": "d21b2b6a-ca9e-437b-abb6-bb0488ad9755",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        1072,
+        704
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "split_test_sessions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "session_id",
+              "keyValue": "={{ $('When chat message received').item.json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "id": "2faaa862-0159-4659-a06e-666277f6aea0",
+      "name": "Check If Session Exists",
+      "type": "n8n-nodes-base.supabase",
+      "position": [
+        1184,
+        416
+      ],
+      "executeOnce": false,
+      "typeVersion": 1,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "4270c464-6874-45d2-aa3b-606f45544c3d",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.id }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4b7c92af-5cc5-4bdc-980d-db7751c17361",
+      "name": "If Session Does Exist",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1408,
+        416
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "tableId": "split_test_sessions",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "show_alternative",
+              "fieldValue": "={{ Math.random() < 0.5 }}"
+            },
+            {
+              "fieldId": "session_id",
+              "fieldValue": "={{ $('When chat message received').item.json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "id": "1eeab48f-a5ab-408a-b182-9826b9562a96",
+      "name": "Assign Path To Session",
+      "type": "n8n-nodes-base.supabase",
+      "position": [
+        1632,
+        480
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9581a184-a120-4b1f-8408-cfe97520d107",
+              "name": "baseline_value",
+              "type": "string",
+              "value": "The dog's name is Ben"
+            },
+            {
+              "id": "1752f2c4-4ce4-4893-b8db-1c59131c298a",
+              "name": "alternative_value",
+              "type": "string",
+              "value": "The dog's name is Tom"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "95405662-16eb-484d-b871-1bdebf26332c",
+      "name": "Define Path Values",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        960,
+        416
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "dfd7b2d1-339f-4cb0-86da-9ebb0469f5d9",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        1072,
+        928
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('When chat message received').item.json.sessionId }}",
+        "tableName": "n8n_split_test_chat_histories"
+      },
+      "id": "19dec2ef-afce-492a-8783-c7e15d205e35",
+      "name": "Postgres Chat Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "position": [
+        1200,
+        928
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "content": "## 2. Determine Prompt for LLM\n",
+        "height": 404,
+        "width": 1164,
+        "color": 6
+      },
+      "id": "7ddea4da-7e01-42e1-a227-5a1429203bf1",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        896,
+        288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "08de68ec-0f12-43ee-98ab-59d8a414f114",
+              "name": "prompt",
+              "type": "string",
+              "value": "={{ $json.show_alternative ? $('Define Path Values').item.json.alternative_value : $('Define Path Values').item.json.baseline_value }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e059c184-c3d5-4b7f-af88-d29297aad023",
+      "name": "Get Correct Prompt",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1856,
+        416
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "### Setup\n1. Create a table in Supabase called **split_test_sessions**. It needs to have the following columns: **session_id** (`text`) and **show_alternative** (`bool`)\n2. Add your **Supabase**, **OpenAI**, and **PostgreSQL** credentials\n3. Modify the **Define Path Values** node to set the baseline and alternative prompt values.\n4. Activate the workflow and test by sending messages through n8n's inbuilt chat\n5. Experiment with different chat sessions to test see both prompts in action",
+        "height": 240,
+        "width": 520
+      },
+      "id": "e882de15-edc5-42d9-acfe-1eb3518e55e8",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        736
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n## Split Test Different Agent Prompts with Supabase and OpenAI\n### Use Case\nOftentimes, it's useful to test different settings for a large language model in production against various metrics. Split testing is a good method for doing this.\n### What it Does\nThis workflow randomly assigns chat sessions to one of two prompts, the baseline and the alternative. The agent will use the same prompt for all interactions in that chat session.\n### How it Works\n1. When messages arrive, a table containing information regarding session ID and which prompt to use is checked to see if the chat already exists\n2. If it does not, the session ID is added to the table and a prompt is randomly assigned\n3. These values are then used to generate a response\n### Next Steps\n- Modify the workflow to test different LLM settings such as temperature\n- Add a method to measure the efficacy of the two alternative prompts",
+        "height": 480,
+        "width": 560
+      },
+      "id": "20d9a4d2-f450-4664-9d2c-160f859f8eb0",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        208
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Define Path Values": {
+      "main": [
+        [
+          {
+            "node": "Check If Session Exists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Correct Prompt": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Session Does Exist": {
+      "main": [
+        [
+          {
+            "node": "Get Correct Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Assign Path To Session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Assign Path To Session": {
+      "main": [
+        [
+          {
+            "node": "Get Correct Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check If Session Exists": {
+      "main": [
+        [
+          {
+            "node": "If Session Does Exist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Define Path Values",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3dfd9b86-b14d-4d2d-a23c-9847fcf60c88",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f0a870651035eb1f8709b6000471c8da9736f2076477041be6ca9e192779df2e"
+  },
+  "id": "W3v2MzCNcKAzKlnc",
+  "tags": []
+}
